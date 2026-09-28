@@ -1,0 +1,194 @@
+{% extends '_base.html' %}
+
+
+{% block title %}
+Novo Produto
+{% endblock %}
+
+
+{% block content %}
+
+
+<div class="row justify-content-center">
+
+    <div class="col-lg-8">
+
+
+        <div class="mb-4">
+
+            <span class="category-badge">
+                NOVA MISSÃO
+            </span>
+
+            <h1 class="page-title mt-3">
+
+                ➕ Novo Produto
+
+            </h1>
+
+            <p class="game-subtitle">
+
+                Adicione um novo item ao seu inventário.
+
+            </p>
+
+        </div>
+
+
+        <div class="card game-card">
+
+            <div class="card-body p-4 p-md-5">
+
+
+                <form method="POST">
+
+
+                    <div class="mb-4">
+
+                        <label
+                            for="name"
+                            class="form-label"
+                        >
+                            🎁 Nome do produto
+                        </label>
+
+                        <input
+                            type="text"
+                            class="form-control"
+                            id="name"
+                            name="name"
+                            placeholder="Ex: Arroz"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="mb-4">
+
+                        <label
+                            for="description"
+                            class="form-label"
+                        >
+                            📜 Descrição
+                        </label>
+
+                        <textarea
+                            class="form-control"
+                            id="description"
+                            name="description"
+                            rows="4"
+                            placeholder="Ex: Pacote de 5kg"
+                        ></textarea>
+
+                    </div>
+
+
+                    <div class="mb-4">
+
+                        <label
+                            for="category"
+                            class="form-label"
+                        >
+                            🗂 Categoria
+                        </label>
+
+                        <select
+                            class="form-select"
+                            id="category"
+                            name="category"
+                            required
+                        >
+
+                            <option value="">
+                                Selecione uma categoria
+                            </option>
+
+                            <option value="Alimentos">
+                                🍚 Alimentos
+                            </option>
+
+                            <option value="Limpeza">
+                                🧹 Limpeza
+                            </option>
+
+                            <option value="Higiene">
+                                🧼 Higiene
+                            </option>
+
+                            <option value="Bebidas">
+                                🥤 Bebidas
+                            </option>
+
+                            <option value="Outros">
+                                📦 Outros
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="mb-4">
+
+                        <label
+                            for="photo"
+                            class="form-label"
+                        >
+                            🖼 Foto
+                        </label>
+
+                        <input
+                            type="text"
+                            class="form-control"
+                            id="photo"
+                            name="photo"
+                            placeholder="Cole o endereço da imagem"
+                        >
+
+                    </div>
+
+
+                    <hr
+                        style="
+                            border-color:
+                                rgba(255,255,255,0.1);
+                        "
+                    >
+
+
+                    <div
+                        class="d-flex gap-2 flex-wrap mt-4"
+                    >
+
+                        <button
+                            type="submit"
+                            class="btn btn-game"
+                        >
+                            ✓ Cadastrar Produto
+                        </button>
+
+
+                        <a
+                            href="{{ url_for('index') }}"
+                            class="btn btn-secondary"
+                        >
+                            ← Cancelar
+                        </a>
+
+                    </div>
+
+
+                </form>
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+{% endblock %}

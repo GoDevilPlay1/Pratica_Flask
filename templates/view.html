@@ -1,0 +1,181 @@
+{% extends '_base.html' %}
+
+
+{% block title %}
+{{ product.name }}
+{% endblock %}
+
+
+{% block content %}
+
+
+<div class="row justify-content-center">
+
+
+    <div class="col-lg-9">
+
+
+        <div class="mb-4">
+
+            <span class="category-badge">
+                ITEM DO INVENTÁRIO
+            </span>
+
+        </div>
+
+
+        <div class="card game-card">
+
+
+            {% if product.photo %}
+
+            <img
+                src="{{ product.photo }}"
+                class="product-image"
+                alt="{{ product.name }}"
+            >
+
+            {% else %}
+
+            <div
+                class="d-flex justify-content-center align-items-center"
+                style="
+                    height: 300px;
+                    background:
+                        linear-gradient(
+                            135deg,
+                            #18223c,
+                            #0c1222
+                        );
+                    font-size: 6rem;
+                "
+            >
+                🎁
+            </div>
+
+            {% endif %}
+
+
+            <div class="card-body p-4 p-md-5">
+
+
+                <div
+                    class="d-flex justify-content-between align-items-start flex-wrap gap-3 mb-4"
+                >
+
+                    <div>
+
+                        <h1
+                            class="page-title mb-2"
+                        >
+                            {{ product.name }}
+                        </h1>
+
+                        <span
+                            class="category-badge"
+                        >
+                            {{ product.category }}
+                        </span>
+
+                    </div>
+
+
+                    <span
+                        class="game-counter"
+                    >
+                        ⚡ {{ product.status }}
+                    </span>
+
+                </div>
+
+
+                <div class="info-box">
+
+                    <strong>
+                        🗂 Categoria
+                    </strong>
+
+                    <div class="mt-2">
+
+                        {{ product.category }}
+
+                    </div>
+
+                </div>
+
+
+                <div class="info-box">
+
+                    <strong>
+                        📜 Descrição
+                    </strong>
+
+                    <div
+                        class="mt-2 game-subtitle"
+                    >
+
+                        {{ product.description }}
+
+                    </div>
+
+                </div>
+
+
+                <div class="info-box">
+
+                    <strong>
+                        ⚙ Status
+                    </strong>
+
+                    <div class="mt-2">
+
+                        {{ product.status }}
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    class="d-flex gap-2 flex-wrap mt-4"
+                >
+
+
+                    <a
+                        href="{{ url_for('edit', id=product.id) }}"
+                        class="btn btn-warning"
+                    >
+                        ✏ Editar
+                    </a>
+
+
+                    <a
+                        href="{{ url_for('delete', id=product.id) }}"
+                        class="btn btn-danger"
+                    >
+                        🗑 Excluir
+                    </a>
+
+
+                    <a
+                        href="{{ url_for('index') }}"
+                        class="btn btn-secondary"
+                    >
+                        ← Voltar
+                    </a>
+
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+
+{% endblock %}

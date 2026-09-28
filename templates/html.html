@@ -1,0 +1,105 @@
+{% extends '_base.html' %}
+
+{% block title %}HTML | Prática Flask{$ endblock %}
+
+{% block main %}
+    <h2>Laboratório de HTML</h2>
+    <p> Esta página será usada para estudar elementos HTML.</p>
+
+<section>
+    <h3>Sobre HTML</h3>
+    <p>HTML é utilizado para estruturar o conteúdo de uma página web.</p>
+</section>
+
+<article>
+    <h3>Exemplo de Artigo</h3>
+    <p>Este é um exemplo de artigo em HTML.</p> 
+</article>
+
+<ul>
+    <li>Python</li>
+    <li>Flask</li>
+    <li>SQLite</li>
+</ul>
+
+<ol>
+    <li>Criar ambiente virtual</li>
+    <li>Instalar Flask</li>
+    <li>Criar app.py</li>
+</ol>
+
+<img 
+    src="URL_DA_IMAGEM" 
+    alt="Descrição da imagem"
+>
+
+<table>
+    <thead>
+        <tr>
+            <th>Tecnologia</th>
+            <th>Função</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr>
+            <td>Python</td>
+            <td>Linguagem</td>
+        </tr>
+
+        <tr>
+            <td>Flask</td>
+            <td>Framework web</td>
+        </tr>
+    </tbody>
+</table>
+
+<section>
+    <h3>Cadastro de teste</h3>
+
+    <form method="post">
+        <p>
+            <label for="name">Nome:</label>
+            <input
+                type="text"
+                id="name"
+                name="name"
+                required
+            >
+        </p>
+
+        <p>
+            <label for="description">Descrição:</label>
+            <textarea
+                id="description"
+                name="description"
+                required
+            ></textarea>
+        </p>
+
+        <p>
+            <label for="location">Localização:</label>
+            <input
+                type="text"
+                id="location"
+                name="location"
+                required
+            >
+        </p>
+
+        <p>
+            <label for="photo">URL da foto:</label>
+            <input
+                type="url"
+                id="photo"
+                name="photo"
+                required
+            >
+        </p>
+
+        <button type="submit">Salvar</button>
+    </form>
+</section>
+
+{% endblock %}
+{% endblock %}

@@ -1,0 +1,250 @@
+{% extends '_base.html' %}
+
+
+{% block title %}
+Editar Produto
+{% endblock %}
+
+
+{% block content %}
+
+
+<div class="row justify-content-center">
+
+    <div class="col-lg-8">
+
+
+        <div class="mb-4">
+
+            <span class="category-badge">
+                CUSTOMIZAÇÃO
+            </span>
+
+            <h1 class="page-title mt-3">
+
+                ✏ Editar Produto
+
+            </h1>
+
+            <p class="game-subtitle">
+
+                Atualize as informações do item.
+
+            </p>
+
+        </div>
+
+
+        <div class="card game-card">
+
+            <div class="card-body p-4 p-md-5">
+
+
+                <form method="POST">
+
+
+                    <div class="mb-4">
+
+                        <label
+                            for="name"
+                            class="form-label"
+                        >
+                            🎁 Nome do produto
+                        </label>
+
+                        <input
+                            type="text"
+                            class="form-control"
+                            id="name"
+                            name="name"
+                            value="{{ product.name }}"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="mb-4">
+
+                        <label
+                            for="description"
+                            class="form-label"
+                        >
+                            📜 Descrição
+                        </label>
+
+                        <textarea
+                            class="form-control"
+                            id="description"
+                            name="description"
+                            rows="4"
+                        >{{ product.description }}</textarea>
+
+                    </div>
+
+
+                    <div class="mb-4">
+
+                        <label
+                            for="category"
+                            class="form-label"
+                        >
+                            🗂 Categoria
+                        </label>
+
+                        <select
+                            class="form-select"
+                            id="category"
+                            name="category"
+                            required
+                        >
+
+
+                            <option
+                                value="Alimentos"
+                                {% if product.category == 'Alimentos' %}selected{% endif %}
+                            >
+                                🍚 Alimentos
+                            </option>
+
+
+                            <option
+                                value="Limpeza"
+                                {% if product.category == 'Limpeza' %}selected{% endif %}
+                            >
+                                🧹 Limpeza
+                            </option>
+
+
+                            <option
+                                value="Higiene"
+                                {% if product.category == 'Higiene' %}selected{% endif %}
+                            >
+                                🧼 Higiene
+                            </option>
+
+
+                            <option
+                                value="Bebidas"
+                                {% if product.category == 'Bebidas' %}selected{% endif %}
+                            >
+                                🥤 Bebidas
+                            </option>
+
+
+                            <option
+                                value="Outros"
+                                {% if product.category == 'Outros' %}selected{% endif %}
+                            >
+                                📦 Outros
+                            </option>
+
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="mb-4">
+
+                        <label
+                            for="photo"
+                            class="form-label"
+                        >
+                            🖼 Foto
+                        </label>
+
+                        <input
+                            type="text"
+                            class="form-control"
+                            id="photo"
+                            name="photo"
+                            value="{{ product.photo }}"
+                        >
+
+                    </div>
+
+
+                    <div class="mb-4">
+
+                        <label
+                            for="status"
+                            class="form-label"
+                        >
+                            ⚡ Status
+                        </label>
+
+                        <select
+                            class="form-select"
+                            id="status"
+                            name="status"
+                        >
+
+
+                            <option
+                                value="on"
+                                {% if product.status == 'on' %}selected{% endif %}
+                            >
+                                🟢 Ativo
+                            </option>
+
+
+                            <option
+                                value="off"
+                                {% if product.status == 'off' %}selected{% endif %}
+                            >
+                                ⚫ Inativo
+                            </option>
+
+
+                        </select>
+
+                    </div>
+
+
+                    <hr
+                        style="
+                            border-color:
+                                rgba(255,255,255,0.1);
+                        "
+                    >
+
+
+                    <div
+                        class="d-flex gap-2 flex-wrap mt-4"
+                    >
+
+
+                        <button
+                            type="submit"
+                            class="btn btn-game"
+                        >
+                            ✓ Salvar Alterações
+                        </button>
+
+
+                        <a
+                            href="{{ url_for('view', id=product.id) }}"
+                            class="btn btn-secondary"
+                        >
+                            ← Cancelar
+                        </a>
+
+
+                    </div>
+
+
+                </form>
+
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+
+{% endblock %}
